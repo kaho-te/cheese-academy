@@ -1,0 +1,330 @@
+/* ここから下に記載していく */
+.wrap {
+  color: #222222;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+.header_logo {
+  margin-right: auto;
+}
+
+.header_navi {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header_navi a {
+  margin-right: 50px;
+  font-size: 21px;
+  text-decoration: none;
+  color: #222222;
+}
+
+.header_navi a:hover {
+  background-color: #ffd61a;
+}
+
+.mainvisual {
+  position: relative;
+}
+
+.mainvisual img {
+  width: 100%;
+}
+
+.mainvisual .title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.mainvisual h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.mainvisual h2{
+  margin-top: 30px;
+  color: white;
+  font-size: 30px;
+}
+
+p {
+  line-height: 30px;
+} 
+
+h3 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: #ffd61a;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.content {
+  text-align: center;
+}
+
+.about_text p {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.about_img {
+  display: flex;
+  margin-top: 80px;
+}
+
+.about_img img {
+  width: 25%;
+}
+
+.course_text p {
+  font-size: 16px;
+  margin-bottom: 60px;
+}
+
+.course img {
+  width: 50%;
+}
+
+.course .box {
+  width: 50%;
+  background-color: #fafafa; 
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.box .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  width: 430px;
+}
+
+.box .text {
+  font-size: 16px;
+  width: 430px;
+}
+
+/* ２つ目のコース用 */
+
+.course .box_left {
+  width: 50%;
+  background-color: #fafafa;
+  padding-right: 50px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: flex-end;
+}
+
+.box_left .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  width: 430px;
+}
+
+.box_left .text {
+  font-size: 16px;
+  width: 430px;
+}
+
+.course_01 {
+  display: flex;
+}
+
+.course_02 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.course_03 {
+  display: flex;
+}
+
+.news_content {
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+}
+
+.newsbox {
+  width: 300px;
+}
+
+.newsbox:hover {
+  opacity: 0.6; filter: brightness(110%); 
+}
+
+.newsbox img {
+  margin-bottom: 30px;
+}
+
+.newsbox p {
+  text-align: left;
+}
+
+.newsbox .date {
+  margin-bottom: 24px;
+}
+
+.morebtn {
+  margin-top: 60px;
+  width: 300px;
+  height: 60px;
+  font-size: 18px;
+  color: white;
+  background-color: #ffd61a;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.morebtn:hover, .submitbtn:hover {
+  color: white;
+  background-color: brown;
+}
+
+.access {
+  background-color: #fafafa;
+  padding-bottom: 45px;
+}
+
+.access h3 {
+  padding-top: 60px;
+}
+
+iframe {
+  margin-bottom: 60px;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+}
+
+.access th {
+  text-align: left;
+  width: 140px;
+  height: 50px;
+  /* border-spacing: 0 30px; */
+}
+
+.access td {
+  text-align: left;
+  height: 50px;
+  /* border-spacing: 0 30px; */
+}
+
+.contact p {
+  margin-bottom: 30px;
+}
+
+.contact_form {
+  margin-top: 70px;
+  text-align: left;
+}
+
+.contact_form tr:first-child>* {
+  border-top:2px solid #bfbfbf;
+}
+
+.contact_form tr:last-child>* {
+  border-bottom: 2px solid #bfbfbf;
+}
+
+.contact_form th {
+  width: 240px;
+  height: 100%;
+  border:1px solid #bfbfbf;
+  border-left: none;
+  padding-left: 16px;
+  padding-right: 64px;
+  vertical-align: middle;
+}
+
+.contact_form td {
+  width: 400px;
+  height: 100%;
+  border:1px solid #bfbfbf;
+  border-right: none;
+  padding: 8px 0 8px 8px;
+}
+
+.check_reason {
+  display:block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.contact_form .text {
+  width: 328px;
+  border:1px solid #bfbfbf;
+  padding: 0;
+}
+
+.contact_form .select {
+  width: 330px;
+  border:1px solid #bfbfbf;
+  padding: 0;
+}
+
+.contact_form textarea {
+  width: 328px;
+  border:1px solid #bfbfbf;
+  padding: 0;
+}
+
+.submit {
+  margin-top: 30px;
+  margin-bottom: 140px;
+  text-align: center;
+}
+
+.submitbtn {
+  width: 300px;
+  height: 60px;
+  font-size: 18px;
+  color: white;
+  background-color: #ffd61a;
+  outline: none;
+  border: none;
+}
+
+.submitbtn:hover {
+  color: white;
+  background-color: brown;
+}
+
+#footer {
+  background-color: #707070;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}

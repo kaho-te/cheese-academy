@@ -1,0 +1,597 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+/* .loading {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+}
+.loading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+.loading .circle {
+  display: block;
+  position: relative;
+  top: calc( 50% - 20px );
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 8px solid #e0e0e0;
+  border-top: 7px solid #ffcccc;
+  border-radius: 50px;
+  animation: loading 700ms linear 0ms infinite normal both;
+}
+@keyframes loading {
+  0% { transform: rotate( 0deg ); }
+  100% { transform: rotate( 360deg ); }
+} */
+
+/* 全体の設定 */
+.wrap {
+  color: white; 
+  background-color: black;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ヘッダーの設定 */
+#header {
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px; 
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 120px;
+  z-index: 2;
+}
+
+.header_navi {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header_navi a {
+  display: inline-block;
+  margin-right: 50px;
+  font-size: 21px;
+  text-decoration: none;
+  color: white;
+}
+
+.header_navi a:hover {
+  transition: .5s;
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+} 
+
+
+/* タイトル文字の設定 */
+.title h1{
+  position:absolute;
+  top:30px;
+  margin-left:30px;
+  z-index: 3;
+  font-size: 120px;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #0fa,
+    0 0 21px #0fa,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa;
+}
+/* 画面更新時のフェードイン トップ画像よりも遅らせる*/
+h1{
+  /* animation-name: title-fadein; 
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; */
+  animation: title-fadein 3s ease-out forwards, flicker 2s 3s infinite alternate;
+}
+
+@keyframes title-fadein {
+	0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+	100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} 
+
+@keyframes flicker {
+  100% {
+    text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #0fa,
+    0 0 80px #0fa,
+    0 0 90px #0fa,
+    0 0 100px #0fa,
+    0 0 140px #0fa;
+  }
+  0% {
+    text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 8px #0fa,
+    0 0 20px #0fa,
+    0 0 45px #0fa,
+    0 0 60px #0fa;
+  }
+}
+
+/* トップ画像の設定 */
+.mainvisual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: right;
+}
+
+.mainvisual img {
+  width: 80%;
+  margin-right: 50px;
+}
+
+/* 画面更新時のフェードイン */
+.mainvisual{
+	animation-name: img-fadein; 
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes img-fadein {
+	0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+	100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} 
+
+/* コンテンツ共通設定 */
+p {
+  line-height: 30px;
+} 
+
+h3 {
+  padding-top: 90px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #f09,
+    0 0 42px #f09,
+    0 0 82px #f09,
+    0 0 92px #f09;
+}
+
+h4 {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.content {
+  text-align: center;
+}
+
+/* ABOUTの設定 */
+.about_text p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.about_img {
+  margin-top: 30px;
+  overflow:hidden;
+}
+
+.about_img img {
+  width: 25%;
+  height:260px;
+}
+/* イメージ画像のスライド */
+/* .about_img img {
+  width:100%;
+} */
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+.about_img .slick-slide {
+  margin:0 10px;
+}
+
+/* MEMBERの設定 */
+.member_text p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+#member img {
+  width: 50%;
+}
+
+/* 奇数番目のメンバーの設定 */
+#member .box {
+  width: 50%;
+  color:white;
+  background-color: black; 
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.box .part {
+  font-size: 18px;
+}
+
+.box .name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.member_odd {
+  display: flex;
+  filter: grayscale(100%);/*モノクロにする*/
+  transition: .5s ease-in-out;/* 色が変わる速さ */
+}
+
+/* 各メンバーのマウスホバー */
+.member_odd:hover {
+  filter:grayscale(0);
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #bfbfbf,
+    0 0 42px #bfbfbf,
+    0 0 82px #bfbfbf,
+    0 0 92px #bfbfbf,
+    0 0 102px #bfbfbf;
+}
+
+/* 偶数番目のメンバーの設定 */
+#member .box_left {
+  width: 50%;
+  color:white;
+  background-color: black; 
+  padding-right: 50px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: flex-end;
+}
+
+.box_left .part {
+  font-size: 18px;
+}
+
+.box_left .name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.member_even {
+  display: flex;
+  flex-direction: row-reverse;
+  filter: grayscale(100%);/*モノクロにする*/
+  transition: .5s ease-in-out;/* 色が変わる速さ */
+}
+
+/* 各メンバーのマウスホバー */
+.member_even:hover {
+  filter:grayscale(0);
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #bfbfbf,
+    0 0 42px #bfbfbf,
+    0 0 82px #bfbfbf,
+    0 0 92px #bfbfbf,
+    0 0 102px #bfbfbf;
+}
+
+/* NEWSの設定 */
+ .newsbox {
+  border: 1px solid;
+  background-color: #bfbfbf;
+  color: black;
+} 
+
+/* 各ニュースのマウスホバー */
+.newsbox:hover {
+  opacity: 0.6; filter: brightness(110%); 
+}
+
+.newsbox img {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.newsbox p {
+  text-align: left;
+  margin-bottom: 24px;
+  padding-left: 10px;
+} 
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+.news_slider .slick-slide {
+  margin:0 10px;
+} 
+
+/*ドットナビゲーションの設定*/  
+.slick-dots {
+  text-align:center;
+  margin:20px 0 0 0;
+}
+
+.slick-dots li {
+  display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots li button::before{
+  color: transparent;
+  outline: none;
+  width:15px;/*ドットボタンのサイズ*/
+  height:15px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  background:#bfbfbf; /*ドットボタンの色*/
+  content: '';
+}
+
+.slick-dots .slick-active button::before{
+  background:white;/*ドットボタンの現在地表示の色*/
+}
+
+/* moreボタンの設定 */
+.morebtn {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  width: 300px;
+  height: 60px;
+  font-size: 18px;
+  background-color: black;
+  border: 2px solid #bfbfbf;
+  border-radius: 5px;
+  color: #bfbfbf;
+  padding: 5px;
+}
+/* moreボタンのマウスホバー 光らせる*/
+.morebtn:hover {
+  color: white;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow:              
+              0 0 7px #fff,
+              0 0 10px #08f,
+              0 0 21px #08f,
+              0 0 42px #08f,
+              0 0 82px #08f,
+              0 0 92px #08f;
+  text-shadow:
+              0 0 7px #fff,
+              0 0 10px #08f,
+              0 0 21px #08f,
+              0 0 42px #08f,
+              0 0 82px #08f,
+              0 0 92px #08f,
+              0 0 102px #08f,
+              0 0 151px #08f;
+  transition: 0.5s;    
+}
+
+/* ACCESSの設定 */
+#access {
+  background-color: black;
+  padding-bottom: 45px;
+}
+
+#access h3 {
+  padding-top: 60px;
+}
+
+iframe {
+  margin-bottom: 60px;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+}
+
+#access th {
+  text-align: left;
+  width: 140px;
+  height: 50px;
+}
+
+#access td {
+  text-align: left;
+  height: 50px;
+}
+
+/* CONTACTの設定 */
+#contact p {
+  margin-bottom: 30px;
+}
+
+.contact_form {
+  margin-top: 70px;
+  text-align: left;
+}
+/* フォームの枠の設定 */
+/* フォームの一番上と下の線を太くする */
+.contact_form tr:first-child>* {
+  border-top:2px solid white;
+}
+
+.contact_form tr:last-child>* {
+  border-bottom: 2px solid white;
+}
+
+.contact_form th {
+  width: 240px;
+  height: 100%;
+  border:1px solid white;
+  border-left: none;
+  padding-left: 16px;
+  padding-right: 64px;
+  vertical-align: middle;
+}
+
+.contact_form td {
+  width: 400px;
+  height: 100%;
+  border:1px solid white;
+  border-right: none;
+  padding: 8px 0 8px 8px;
+}
+
+/* フォームの中の設定 */
+.contact_form .text {
+  width: 328px;
+  border:1px solid #bfbfbf;
+  padding: 0;
+}
+
+.check_reason {
+  display:block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.contact_form .select {
+  width: 330px;
+  border:1px solid #bfbfbf;
+  padding: 0;
+}
+
+.contact_form textarea {
+  width: 328px;
+  border:1px solid #bfbfbf;
+  padding: 0;
+}
+
+/* 送信ボタンの設定 */
+.submit {
+  margin-top: 30px;
+  padding-bottom: 140px;
+  text-align: center;
+}
+
+.submitbtn {
+  width: 300px;
+  height: 60px;
+  font-size: 18px;
+  background-color: black;
+  border: 2px solid #bfbfbf;
+  border-radius: 5px;
+  color: #bfbfbf;
+  padding: 5px;
+}
+/* 送信ボタンのマウスホバー 光らせる*/
+.submitbtn:hover {
+  color: white;
+  border: 2px solid #fff;
+  box-shadow:              
+              0 0 7px #fff,
+              0 0 10px #08f,
+              0 0 21px #08f,
+              0 0 42px #08f,
+              0 0 82px #08f,
+              0 0 92px #08f;
+  text-shadow:
+              0 0 7px #fff,
+              0 0 10px #08f,
+              0 0 21px #08f,
+              0 0 42px #08f,
+              0 0 82px #08f,
+              0 0 92px #08f,
+              0 0 102px #08f,
+              0 0 151px #08f;
+  transition: 0.5s;       
+}
+
+/* フッターの設定 */
+#footer {
+  background-color: #707070;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#page-top {
+  display: flex;
+  justify-content: flex-end;
+  position:absolute;
+  top: -75px;
+  right: 20px;
+}
+
+#page-top a {
+  border: 2px solid #fff;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  width: 60px;
+  padding: 20px 5px;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  opacity: 0.9;
+  transition: all .3s ease;
+}
+#page-top a:hover {
+  text-decoration: none;
+  box-shadow:              
+  0 0 7px #fff,
+  0 0 10px #08f,
+  0 0 21px #08f,
+  0 0 42px #08f,
+  0 0 82px #08f;
+text-shadow:
+  0 0 7px #fff,
+  0 0 10px #08f,
+  0 0 21px #08f,
+  0 0 42px #08f,
+  0 0 82px #08f;
+transition: 0.5s;  
+}
